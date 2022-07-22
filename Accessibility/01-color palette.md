@@ -12,8 +12,8 @@ Background to text color contrast ratios:
 These contrast numbers are fairly high and they get higher the thinner your font gets.
 
 For This you can use Tools like –
-*	Webaim Contrast Checker [https://webaim.org/resources/contrastchecker/]
-*	Adobe Color [https://color.adobe.com/create/color-contrast-analyzer]
+*   [https://webaim.org/resources/contrastchecker/ Webaim Contrast Checker]
+*	[https://color.adobe.com/create/color-contrast-analyzer Adobe Color]
 
 ***Guides***
 
