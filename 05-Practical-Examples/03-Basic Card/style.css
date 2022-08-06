@@ -1,0 +1,90 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-size: 20px;
+  }
+  
+  img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .sr-only {
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+  }
+  
+  .card-list {
+    margin: 2rem;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    gap: 2rem;
+  }
+  
+  .card {
+    position: relative;
+    width: calc(100% / 3);
+    border: 3px solid black;
+    border-radius: 1rem;
+    padding: 1rem;
+  }
+  
+  .card a {
+    color: black;
+    text-decoration: none;
+  }
+  
+  .card a:hover h2 {
+    text-decoration: underline;
+  }
+  
+  .link .card:hover a {
+    text-decoration: underline;
+  }
+  /*
+  All right, so at this point, we've solved the accessibly problems for screen reader users 
+  and people who use keyboard navigation because now it's crystal clear what's happening. 
+  We are going into the card and then only clicking on the link and only getting the link 
+  read out.The problem is now we've also introduced a bit of a problem of users who use a 
+  mouse or touchscreen because the only clickable part of this card is the actual link. 
+  
+   So how do we solve this problem? Well, there's a bit of a CSS hack we can use here. 
+   It's clever. We go and grab the anchor, so the link and then we say let's anchor after 
+   and then position the after element absolutely to the top left and set its width and 
+   height to 100%, display the block and content to nothing. So what happens now is we get 
+   an entire box of nothing that sits on top of the entire card and effectively just extends 
+   the link. So that means if I hover my mouse over it now, let's see, I'll reload it, I need 
+   to save to save. And then reload and you can see now I hover over and I'm actually 
+   clicking on the link down here but I'm hovering over the entire card. There's a drawback 
+   to this though. I can no longer highlight the text because I'm now hovering onto that 
+   after element that sits on top as an invisible layer and it's blocking access to the 
+   text. So we have to make some concessions here. Either really good navigation for 
+   accessibility users or being able to highlight text with your mouse. It's tricky. 
+   
+   You can fix all this with JavaScript too by making some really complicated stuff in the 
+   background but what you're seeing is when we try to make cards that do perfect things 
+   for everyone, we will run into issues where we have to trade a solution for one group 
+   for another group. And the best solution is always one that serves all users the best. 
+   So it might be that the card with the hidden text where we have full access to all the 
+   content and we can click on things and everything is the best option. Or it might be that 
+   you need to go to the card with internal link. 
+  */
+  /* Make the whole card clickable. */
+  /* Prevents text highlighting.    */
+  .card a::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+  }

@@ -1,0 +1,10 @@
+Cards, so boxes with an image and some text and often a button or a link or something else have become a staple of websites and applications. They're easy to design, easy to understand and allow us to create teasers for more content or cards that people can sift through and they just look good and encourage engagement. Unfortunately, cards are also a significant accessibility challenge. Let me explain. Here I have three different documents with cards and they look exactly the same and seem to function exactly the same if you use a mouse. So this is the first one. Hover over it. You can see there's a hover state here. 
+
+So in this first example, there's a link wrapping around the entire card. So what happens now is the browser will read out all the contents within the card and in this case, it's just the title and a short description but it could be a lot longer. And what you're hearing is all of that content is considered the link. 
+
+What you're hearing here is that we've created a very cumbersome navigation process for an accessibility user. They know that there are links here but you have to go through all of this text content to get to the link, which is really annoying and requires a lot of time and effort. Although this looks good and functions and you're able to get to it, it's not ideal.
+
+
+ Let's look at this example here. So it's the same code, except I've moved the link. So the link used to be directly after the list item and wrap around the image to h2 and the paragraph. Now I've moved the link in. So it's only wrapping around the title itself. So here we have first card, continue reading. That means I no longer need that aria-hidden true because there's no risk of the content being read out as part of the link. Instead, if the user is just reading the page from top to bottom, they'll get all the content. But if they just tab through the links, they'll only get the links and that's only the headings. So what does that look like? So now that the link is only wrapping around the headings, we get a much easier read out and it's also much clearer what's going on here.
+
+ 
